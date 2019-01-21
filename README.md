@@ -34,6 +34,10 @@ The default short is `ctrl+/` but:
 - Add help entries (like in the Mac OS search dialog).
 - retab
 
+Dreaming of...:
+
+- Embedding the input box in the menu (like the Mac OS help): https://stackoverflow.com/questions/4666693/embed-textbox-in-menu-item
+
 ## Notes
 
 - Inspired by the [Olive Video Editor](https://github.com/olive-editor/olive) `/` command.  
