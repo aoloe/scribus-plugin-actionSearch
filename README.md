@@ -10,7 +10,7 @@ Clone the `scribus-plugin-actionSearch` repository and put – or symlink – it
 
     ADD_SUBDIRECTORY(actionSearch)
 
-to the `CMakeList.txt` file in `scribus/plugins/`.
+to the `CMakeLists.txt` file in `scribus/plugins/`.
 
 ## Run
 
