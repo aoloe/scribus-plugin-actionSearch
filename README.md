@@ -8,10 +8,8 @@ Search the menus and perform the action.
 
 ## Todo
 
-- add a translatable place holder in the qlineedit
-- clear and add the filtered list
-- place the dialog in the middle of the screen
-- can i add a default shortcut from the plugin?
+- Move the "Actions search" to the Help menu
+- Activate the shortcut.
 
 ## Notes
 
