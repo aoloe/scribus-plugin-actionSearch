@@ -30,6 +30,8 @@ The default short is `ctrl+/` but:
 - Move the "Actions search" to the Help menu
 - If multiple words are typed, split the string and show the entries that contain all words.
 - Find a way to add actions that are inside of dialogs (Properties palettes: display and activate?)
+- Maybe add keywords to selected entries to help finding them (transparency, ...)
+- Add help entries (like in the Mac OS search dialog).
 - retab
 
 ## Notes
