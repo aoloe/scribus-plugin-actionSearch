@@ -16,4 +16,5 @@ Search the menus and perform the action.
 
 ## Notes
 
-- Inspired by the [Olive Video Editor](https://github.com/olive-editor/olive) `/` command.
+- Inspired by the [Olive Video Editor](https://github.com/olive-editor/olive) `/` command.  
+  <https://github.com/olive-editor/olive/pull/266/files>
