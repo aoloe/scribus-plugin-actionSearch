@@ -4,6 +4,23 @@ Search the menus and perform the action.
 
 ![](assets/action-search.gif)
 
+## Install
+
+Clone the `scribus-plugin-actionSearch` repository and put – or symlink – its `src` directory into `scribus/plugins/` as `actionSearch`. Then add 
+
+    ADD_SUBDIRECTORY(actionSearch)
+
+to the `CMakeList.txt` file in `scribus/plugins/`.
+
+## Run
+
+Currently, "Actions search" is added to the "Extra" menus. It is planned to move it to the Help menu as soon as the [cannot add plugins to some of the menus](https://bugs.scribus.net/view.php?id=15546) ticket is solved.
+
+The default short is `ctrl+/` but:
+
+- It won't be avalaible, if you cannot type  `/` directly, without a modififier.
+- It Will not be added to the current shortcuts until the settings are recreated. You will have to add it "manually" in the preferences.
+
 ## Implementation
 
 - Each time the command gets called, find all active menu entries.
