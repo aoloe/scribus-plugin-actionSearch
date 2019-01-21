@@ -100,7 +100,6 @@ void Dialog::moveSelectionDown()
 void Dialog::updateList()
 {
     ui->actionsListWidget->clear();
-    qDebug() << "hey";
     const auto filter = ui->filterLineEdit->text();
     if (filter == "")
     {

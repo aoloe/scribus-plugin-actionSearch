@@ -47,10 +47,11 @@ void Plugin::languageChange()
 	m_actionInfo.name = "ActionSearch";
 	// Action text for menu, including accel
 	m_actionInfo.text = tr("&Action Search");
-	// Menu
-    // TODO: move it to edit (does not seem to appear)
+	// TODO: move to help
 	m_actionInfo.menu = "Extras";
-    // if 
+	// m_actionInfo.menu = "Help";
+	// m_actionInfo.menuAfterName = "Tooltips";
+	m_actionInfo.keySequence = "Ctrl+/";
 	m_actionInfo.enabledOnStartup = false;
 	m_actionInfo.needsNumObjects = -1;
 }
@@ -89,11 +90,11 @@ bool Plugin::run(ScribusDoc* doc, const QString& target)
     ActionSearch actionSearch{doc->scMW()->menuBar()};
     actionSearch.update();
     auto dialog = new Dialog{doc->scMW(), actionSearch.getActionNames()};
-    connect(dialog, &Dialog::accepted, [&actionSearch, &dialog]() {
+    connect(dialog, &Dialog::accepted, [&actionSearch, dialog]() {
         actionSearch.execute(dialog->getActionName());
     });
     dialog->setModal(true);
-    dialog->show();
+    dialog->exec();
     return true;
 }
 

@@ -20,7 +20,9 @@ void ActionSearch::update()
 
 void ActionSearch::execute(QString actionName)
 {
-
+    if (actions.contains(actionName)) {
+        actions[actionName]->trigger();
+    }
 }
 
 void ActionSearch::readMenuActions(QMenu* menu)
@@ -47,7 +49,6 @@ void ActionSearch::readMenuActions(QMenu* menu)
                 // TODO: we might want to have a multilevel menuName
                 actionName += "\n(" + menuName +")";
                 actions.insert(actionName, action);
-                qDebug() << actionName;
             }
         }
         
