@@ -32,9 +32,14 @@ namespace ActionSearch {
 
 Plugin::Plugin() : ScActionPlugin()
 {
-	// Set action info in languageChange, so we only have to do
-	// it in one place.
-	languageChange();
+	m_actionInfo.name = "ActionSearch";
+	// Action text for menu, including accel
+	m_actionInfo.text = tr("&Action Search");
+	m_actionInfo.menu = "Help";
+	m_actionInfo.menuAfterName = "helpTooltips";
+	m_actionInfo.keySequence = "Ctrl+/";
+	m_actionInfo.enabledOnStartup = false;
+	m_actionInfo.needsNumObjects = -1;
 }
 
 Plugin::~Plugin()
@@ -44,16 +49,7 @@ Plugin::~Plugin()
 
 void Plugin::languageChange()
 {
-	m_actionInfo.name = "ActionSearch";
-	// Action text for menu, including accel
 	m_actionInfo.text = tr("&Action Search");
-	// TODO: move to help
-	m_actionInfo.menu = "Extras";
-	// m_actionInfo.menu = "Help";
-	// m_actionInfo.menuAfterName = "Tooltips";
-	m_actionInfo.keySequence = "Ctrl+/";
-	m_actionInfo.enabledOnStartup = false;
-	m_actionInfo.needsNumObjects = -1;
 }
 
 const QString Plugin::fullTrName() const
