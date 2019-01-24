@@ -97,18 +97,44 @@ void Dialog::moveSelectionDown()
 }
 
 
+/**
+ * Fill the list with all actions that match the filter.
+ * If the filter contains multiple words, acceppts all actions that
+ * contain all the words
+ */
 void Dialog::updateList()
 {
 	ui->actionsListWidget->clear();
-	const auto filter = ui->filterLineEdit->text();
+	const auto filter = ui->filterLineEdit->text().trimmed();
 	if (filter == "")
 	{
 		return;
 	}
-	for (const auto& name: actionNames)
-	{
-		if (name.contains(filter, Qt::CaseInsensitive)) {
-			ui->actionsListWidget->addItem(name);
+	if (!filter.contains(" ")) {
+		for (const auto& name: actionNames)
+		{
+			if (name.contains(filter, Qt::CaseInsensitive))
+			{
+				ui->actionsListWidget->addItem(name);
+			}
+		}
+	} else {
+		auto words = filter.split(" ");
+		for (const auto& name: actionNames)
+		{
+			bool matches{true};
+			for (const auto& word: words)
+			{
+				if (!name.contains(word, Qt::CaseInsensitive))
+				{
+					matches = false;
+					break;
+				}
+			}
+			if (matches)
+			{
+				ui->actionsListWidget->addItem(name);
+			}
 		}
 	}
 	if (ui->actionsListWidget->count() > 0) {

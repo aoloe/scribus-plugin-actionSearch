@@ -19,24 +19,26 @@ Currently, "Actions search" is added to the "Extra" menus. It is planned to move
 The default short is `ctrl+/` but:
 
 - It won't be avalaible, if you cannot type  `/` directly, without a modififier.
-- It Will not be added to the current shortcuts until the settings are recreated. You will have to add it "manually" in the preferences.
+- It won't be added to the current shortcuts, until the settings are recreated. You will have to add it "manually" in the preferences.
 
 ## Implementation
 
 - Each time the command gets called, find all active menu entries.
+- If the filter contains multiple words, show the actions that contain all the words.
 
 ## Todo
 
 - [x] Move the "Actions search" to the Help menu
-- [ ] If multiple words are typed, split the string and show the entries that contain all words.
+- [x] If multiple words are typed, split the string and show the entries that contain all words.
 - [ ] Find a way to add actions that are inside of dialogs (Properties palettes: display and activate?)
 - [ ] Maybe add keywords to selected entries to help finding them (transparency, ...)
 - [ ] Add help entries (like in the Mac OS search dialog).
-- [ ] retab
+- [x] retab
 
 Dreaming of...:
 
 - Embedding the input box in the menu (like the Mac OS help): https://stackoverflow.com/questions/4666693/embed-textbox-in-menu-item
+- Eventually using `/` instead of `ctrl-/`... but, then, it won't work in edit mode.
 
 ## Notes
 
