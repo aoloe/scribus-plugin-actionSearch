@@ -81,17 +81,17 @@ void Plugin::deleteAboutData(const AboutData* about) const
  */
 bool Plugin::run(ScribusDoc* doc, const QString& target)
 {
-    // TODO: one day we will have to find out and document what target is good for...
-    Q_ASSERT(target.isNull());
-    ActionSearch actionSearch{doc->scMW()->menuBar()};
-    actionSearch.update();
-    auto dialog = new Dialog{doc->scMW(), actionSearch.getActionNames()};
-    connect(dialog, &Dialog::accepted, [&actionSearch, dialog]() {
-        actionSearch.execute(dialog->getActionName());
-    });
-    dialog->setModal(true);
-    dialog->exec();
-    return true;
+	// TODO: one day we will have to find out and document what target is good for...
+	Q_ASSERT(target.isNull());
+	ActionSearch actionSearch{doc->scMW()->menuBar()};
+	actionSearch.update();
+	auto dialog = new Dialog{doc->scMW(), actionSearch.getActionNames()};
+	connect(dialog, &Dialog::accepted, [&actionSearch, dialog]() {
+		actionSearch.execute(dialog->getActionName());
+	});
+	dialog->setModal(true);
+	dialog->exec();
+	return true;
 }
 
 } // namespaces

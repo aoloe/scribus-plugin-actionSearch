@@ -12,20 +12,21 @@ namespace ActionSearch {
 
 class ActionSearch
 {
-    public:
-        ActionSearch(QMenuBar *menuBar)
-        : menuBar{menuBar}
-        {}
-        ~ActionSearch() {}
-        void update();
-        QList<QString> getActionNames() {return actions.keys();}
-        void execute(QString actionName);
-    private:
-        QMenuBar* menuBar;
+	public:
+		ActionSearch(QMenuBar *menuBar)
+			: menuBar{menuBar}
+		{}
+		~ActionSearch() {}
+		void update();
+		QList<QString> getActionNames() {return actions.keys();}
+		void execute(QString actionName);
 
-        void readMenuActions(QMenu* menu);
+	private:
+		QMenuBar* menuBar;
 
-        QHash<QString, QAction*> actions{}; // std::unordered_map
+		void readMenuActions(QMenu* menu);
+
+		QHash<QString, QAction*> actions{}; // std::unordered_map
 };
 
 } // namespaces

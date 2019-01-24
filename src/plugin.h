@@ -26,23 +26,23 @@ namespace ActionSearch {
 class PLUGIN_API Plugin : public ScActionPlugin
 {
 	Q_OBJECT
-    public:
+	public:
 
-        // Standard plugin implementation
-        Plugin();
-        virtual ~Plugin();
-        /*!
-        \author Ale Rimoldi
-        \brief Run the Apply Style
-        \param filename a file to export to
-        \retval bool true
-        */
-        virtual bool run(ScribusDoc* doc, const QString& filename = QString::null) override;
-        virtual const QString fullTrName() const override;
-        virtual const AboutData* getAboutData() const override;
-        virtual void deleteAboutData(const AboutData* about) const override;
-        virtual void languageChange() override;
-        virtual void addToMainWindowMenu(ScribusMainWindow *) override {};
+		// Standard plugin implementation
+		Plugin();
+		virtual ~Plugin();
+		/*!
+		  \author Ale Rimoldi
+		  \brief Run the Apply Style
+		  \param filename a file to export to
+		  \retval bool true
+		 */
+		virtual bool run(ScribusDoc* doc, const QString& filename = QString::null) override;
+		virtual const QString fullTrName() const override;
+		virtual const AboutData* getAboutData() const override;
+		virtual void deleteAboutData(const AboutData* about) const override;
+		virtual void languageChange() override;
+		virtual void addToMainWindowMenu(ScribusMainWindow *) override {};
 };
 
 } // namespaces

@@ -17,27 +17,30 @@ namespace ActionSearch {
 
 class Dialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
-    public:
-        explicit Dialog(QMainWindow *parent, QList<QString> actionNames);
-        ~Dialog();
-        QString getActionName();
-    protected:
-        bool eventFilter(QObject *obj, QEvent *ev);
-    private slots:
-        void updateList();
-    signals:
-        void keyArrowUpPressed();
-        void keyArrowDownPressed();
-    private slots:
-        void moveSelectionUp();
-        void moveSelectionDown();
+	public:
+		explicit Dialog(QMainWindow *parent, QList<QString> actionNames);
+		~Dialog();
+		QString getActionName();
+	protected:
+		bool eventFilter(QObject *obj, QEvent *ev);
+
+	private slots:
+		void updateList();
+
+	signals:
+		void keyArrowUpPressed();
+		void keyArrowDownPressed();
+
+	private slots:
+		void moveSelectionUp();
+		void moveSelectionDown();
         
-    private:
-        Ui::ActionSearchDialog *ui;
-        QList<QString> actionNames;
-        bool filterLineEditKeyPress(QKeyEvent * event);
+	private:
+		Ui::ActionSearchDialog *ui;
+		QList<QString> actionNames;
+		bool filterLineEditKeyPress(QKeyEvent * event);
 };
 
 } // namespaces
