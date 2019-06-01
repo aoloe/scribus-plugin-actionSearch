@@ -29,9 +29,7 @@ void ActionSearch::readMenuActions(QMenu* menu)
 {
 	// TODO: check why menu can be null
 	if (menu == NULL)
-	{
 		return;
-	}
 
 	QString menuName = menu->title().replace("&", "");
 
@@ -40,16 +38,15 @@ void ActionSearch::readMenuActions(QMenu* menu)
 		if (action->menu() != NULL)
 		{
 			readMenuActions(action->menu());
+			continue;
 		}
-		else
+
+		QString actionName = action->text().replace("&", "");
+		if (!actionName.isEmpty() && action->isEnabled())
 		{
-			QString actionName = action->text().replace("&", "");
-			if (actionName != "" && action->isEnabled())
-			{
-				// TODO: we might want to have a multilevel menuName
-				actionName += "\n(" + menuName +")";
-				actions.insert(actionName, action);
-			}
+			// TODO: we might want to have a multilevel menuName
+			actionName += "\n(" + menuName +")";
+			actions.insert(actionName, action);
 		}
 
 	}
